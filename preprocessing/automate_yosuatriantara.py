@@ -36,7 +36,7 @@ def preprocess_data(input_file, output_file):
     Q3 = df[existing_cols].quantile(0.75)
     IQR = Q3 - Q1
     
-    # Filter data: Ambil data yang BUKAN outlier
+    # Filter data
     condition = ~((df[existing_cols] < (Q1 - 1.5 * IQR)) | (df[existing_cols] > (Q3 + 1.5 * IQR))).any(axis=1)
     df_clean = df[condition].copy()
     print(f"Data sebelum outlier removal: {len(df)}, sesudah: {len(df_clean)}")
