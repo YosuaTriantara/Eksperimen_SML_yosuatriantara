@@ -45,7 +45,7 @@ jobs:
         git push
 
     - name: Upload preprocessed dataset as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: churn_preprocessing_data
-          path: preprocessing/online_retail_customer_churn_preprocessing.csv
+      uses: actions/upload-artifact@v4
+      with:
+        name: churn_preprocessing_data
+        path: preprocessing/online_retail_customer_churn_preprocessing.csv
